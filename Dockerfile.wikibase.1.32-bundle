@@ -1,0 +1,26 @@
+FROM ubuntu:xenial as fetcher
+
+RUN apt-get update && \
+    apt-get install --yes --no-install-recommends unzip=6.* jq=1.* curl=7.* ca-certificates=201* && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ADD https://raw.githubusercontent.com/wmde/wikibase-docker/8fa3a15a6c1d37ba6b555118eb851c562bd4794c/wikibase/1.32/bundle/download-extension.sh /download-extension.sh
+
+RUN bash download-extension.sh ConfirmEdit;\
+bash download-extension.sh Nuke;\
+tar xzf ConfirmEdit.tar.gz;\
+tar xzf Nuke.tar.gz
+
+FROM wikibase/wikibase:1.32-bundle
+
+COPY --from=fetcher /ConfirmEdit /var/www/html/extensions/ConfirmEdit
+COPY --from=fetcher /Nuke /var/www/html/extensions/Nuke
+
+RUN echo $'#!/bin/bash\n\
+set -eu\n\
+/wait-for-it.sh $DB_SERVER -t 120\n\
+sleep 1\n\
+/wait-for-it.sh $DB_SERVER -t 120\n\
+docker-php-entrypoint apache2-foreground\n\
+' > /entrypoint.sh
+
