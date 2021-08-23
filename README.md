@@ -3,7 +3,7 @@
 This repository contains some infrastructure for the [Wikibase Registry][],
 which runs as a docker-compose setup in the `wbregistry-01` instance of the `wikibase-registry` Wikimedia Cloud VPS project.
 
-## Configuration
+## Initial configuration
 
 - Copy `PrivateSettings.php.template` to `PrivateSettings.php`
 - Copy `env.template` to `.env`
