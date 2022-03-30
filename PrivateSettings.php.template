@@ -1,0 +1,3 @@
+<?php
+$wgDBpassword = "some-secret-password";
+$wgSecretKey = "some-secret-secret";
