@@ -52,11 +52,19 @@ $wgGroupPermissions['*']['writeapi'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['createtalk'] = false;
 
-$wgNamespaceProtection[NS_MAIN] = [ 'autoconfirmed' ];
-$wgNamespaceProtection[NS_USER] = [ 'autoconfirmed' ];
-$wgNamespaceProtection[NS_USER_TALK] = [ 'autoconfirmed' ];
-
 $wgGroupPermissions['Trusted'] = $wgGroupPermissions['user'];
 $wgGroupPermissions['Trusted']['skipcaptcha'] = true;
 $wgGroupPermissions['Trusted']['userrights'] = false;
 $wgAddGroups['Trusted'][] = 'Trusted';
+
+$wgGroupPermissions['user']['createpage'] = false;
+$wgGroupPermissions['user']['move'] = false;
+$wgGroupPermissions['user']['movefile'] = false;
+$wgGroupPermissions['user']['move-categorypages'] = false;
+$wgGroupPermissions['user']['move-subpages'] = false;
+$wgGroupPermissions['user']['move-rootuserpages'] = false;
+$wgGroupPermissions['user']['upload'] = false;
+
+$wgNamespaceProtection[NS_MAIN] = [ 'autoconfirmed' ];
+$wgNamespaceProtection[NS_USER] = [ 'autoconfirmed' ];
+$wgNamespaceProtection[NS_USER_TALK] = [ 'autoconfirmed' ];
