@@ -3,6 +3,9 @@ require 'PrivateSettings.php';
 
 $wgLogo = 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Wikibase_registry_terrible_logo.svg';
 
+// T227643
+$wgServer = "https://wikibase-registry.wmflabs.org";
+
 $wgDBserver = "mysql.svc:3306";
 $wgDBname = "wikibase_registry";
 $wgDBuser = "wikibase-reg-user";
