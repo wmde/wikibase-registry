@@ -57,6 +57,7 @@ $wgGroupPermissions['*']['createtalk'] = false;
 
 $wgGroupPermissions['Trusted'] = $wgGroupPermissions['user'];
 $wgGroupPermissions['Trusted']['skipcaptcha'] = true;
+$wgGroupPermissions['Trusted']['editcontentmodel'] = true;
 $wgGroupPermissions['Trusted']['userrights'] = false;
 $wgAddGroups['Trusted'][] = 'Trusted';
 
@@ -67,6 +68,11 @@ $wgGroupPermissions['user']['move-categorypages'] = false;
 $wgGroupPermissions['user']['move-subpages'] = false;
 $wgGroupPermissions['user']['move-rootuserpages'] = false;
 $wgGroupPermissions['user']['upload'] = false;
+$wgGroupPermissions['user']['editcontentmodel'] = false;
+
+$wgGroupPermissions['sysop']['editcontentmodel'] = true;
+
+$wgGroupPermissions['interface-admin']['editcontentmodel'] = true;
 
 $wgNamespaceProtection[NS_MAIN] = [ 'autoconfirmed' ];
 $wgNamespaceProtection[NS_USER] = [ 'autoconfirmed' ];
