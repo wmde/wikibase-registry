@@ -54,7 +54,7 @@ services:
     image: wikibase/wdqs:0.3.10
     restart: always
     volumes:
-      - query-service-data-0310:/wdqs/data
+      - query-service-data-0310-2:/wdqs/data
     command: /runBlazegraph.sh
     environment:
       WIKIBASE_HOST: wikibase-registry.wmflabs.org
@@ -97,4 +97,4 @@ volumes:
   mediawiki-mysql-data:
   mediawiki-images-data:
   query-service-data:
-  query-service-data-0310:
+  query-service-data-0310-2:
