@@ -22,7 +22,7 @@ services:
          - wikibase.svc
          - wikibase-registry.wmflabs.org
   mysql:
-    image: mariadb:latest
+    image: mariadb:10.2.14
     restart: always
     volumes:
       - mediawiki-mysql-data:/var/lib/mysql
