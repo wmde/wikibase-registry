@@ -1,7 +1,7 @@
 # Wikibase Registry
 
 This repository contains some infrastructure for the [Wikibase Registry][],
-which runs as a docker-compose setup in the `wbregistry-01` instance of the `wikibase-registry` Wikimedia Cloud VPS project.
+which runs as a docker-compose setup in the `wbregistry-02` instance of the `wikibase-registry` Wikimedia Cloud VPS project.
 
 ## Initial configuration
 
@@ -13,7 +13,7 @@ which runs as a docker-compose setup in the `wbregistry-01` instance of the `wik
 
 To update the system:
 
-- SSH into the host: `ssh wbregistry-01.wikibase-registry.eqiad1.wikimedia.cloud`
+- SSH into the host: `ssh wbregistry-02.wikibase-registry.eqiad1.wikimedia.cloud`
 - Get a root shell: `sudo -i`
 - Go to the setup directory: `cd ~/wikibase-registry`
 - Pull latest changes: `git pull`
